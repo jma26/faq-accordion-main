@@ -1,0 +1,202 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 300 700;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf") format('truetype');
+  font-style: italic;
+  font-weight: 100 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  font-size: 16px;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Work Sans", sans-serif;
+  overflow-wrap: break-word;
+}
+summary, details {
+  font-family: "Work Sans", sans-serif;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+:root {
+  --white: hsl(0, 100%, 100%);
+  --purple-100: hsl(275, 100%, 97%);
+  --purple-600: hsl(292, 16%, 49%);
+  --purple-950: hsl(292, 42%, 14%);
+}
+
+main {
+  background: var(--purple-100);
+  min-height: 100vh;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.faq__header-image {
+  width: 100%;
+}
+
+.faq__header-image--desktop {
+  display: none;
+}
+
+.faq__article {
+  border-radius: 1rem;
+  height: 100%;
+  position: relative;
+}
+
+.faq__section {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  color: var(--purple-950);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: -5.5rem 1.25rem 0;
+  max-width: 37.5rem;
+  padding: 1.25rem;
+  position: absolute;
+}
+
+.faq__section-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.faq__decorative-star {
+  height: auto;
+  max-width: 1.5rem;
+}
+
+.faq__headline {
+  font-size: 2rem;
+}
+
+.faq__details {
+  padding: 1.25rem 0;
+  border-top: 1px solid hsla(0, 6%, 62%, 0.11)
+}
+
+.faq__details:hover {
+  color: rgba(172, 38, 233, 1);
+  cursor: pointer;
+}
+
+.faq__details:first-of-type {
+  border-top: 0;
+}
+
+.faq__question {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  line-height: normal;
+  list-style: none;
+  width: 100%;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question-decorative-wrapper {
+  display: flex;
+  margin-inline-start: 3rem;
+}
+
+.faq__question-decorative-plus-icon, .faq__question-decorative-minus-icon {
+  height: auto;
+  max-width: 2rem;
+}
+
+.faq__question-decorative-minus-icon {
+  display: none;
+}
+
+.faq__details[open] .faq__question-decorative-plus-icon {
+  display: none;
+}
+
+.faq__details[open] .faq__question-decorative-minus-icon {
+  display: block;
+}
+
+.faq__answer {
+  color: var(--purple-950);
+  font-size: 0.875rem;
+  padding: 1.25rem 0 0;
+}
+
+@media only screen and (min-width: 64rem) {
+  .faq__section {
+    margin: -8.5rem 2.25rem 0;
+    padding: 2.25rem;
+  }
+
+  .faq__decorative-star {
+    max-width: 2.5rem;
+  }
+
+  .faq__headline {
+    font-size: 3rem;
+  }
+
+  .faq__header-image--mobile {
+    display: none;
+  }
+
+  .faq__header-image--desktop {
+    display: block;
+  }
+}
